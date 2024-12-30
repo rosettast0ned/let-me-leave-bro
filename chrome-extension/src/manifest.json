@@ -27,6 +27,11 @@
         "128": "let_me_leave_bro128.png"
     },
     "action": {
-        "default_icon": "let_me_leave_bro.png"
+        "default_icon": {
+            "16": "let_me_leave_bro16.png",
+            "32": "let_me_leave_bro32.png",
+            "48": "let_me_leave_bro48.png",
+            "128": "let_me_leave_bro128.png"
+        }
     }
 }
