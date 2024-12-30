@@ -18,7 +18,7 @@ jobs:
       - name: Install Chrome, pack and sign extension
         #id: chrome_stuff
         uses: browser-actions/setup-chrome@v1
-      - run: chrome --pack-extension=${{ github.workspace }}/chrome-extension/src --pack-extension-key=${{ runner.temp }}/signing-key.pem
+      - run: chrome --no-sandbox --pack-extension=${{ github.workspace }}/chrome-extension/src --pack-extension-key=${{ runner.temp }}/signing-key.pem
       - run: rm -f ${{ runner.temp }}/signing-key.pem
       - run: mv ${{ github.workspace }}/chrome-extension/src.crx ${{ github.workspace }}/chrome-extension/let-me-leave-bro-${{ env.LMLB_VERSION }}.crx
 
