@@ -10,8 +10,8 @@ console.log('LMLB: Let Me Leave, Bro extension loaded.')
 
 const StopIt = (event) => {
     console.log('LMLB: Intercepting unload events.')
+    event.stopImmediatePropagation();
     event.stopPropagation();
-    event.returnValue = '';
 };
 
 const AddListeners = () => {
