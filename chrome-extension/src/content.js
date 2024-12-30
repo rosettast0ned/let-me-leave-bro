@@ -22,7 +22,12 @@ const AddListeners = () => {
     console.log('LMLB: Added listeners.');
 };
 
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('LMLB: Document loaded, adding listeners.');
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+        console.log('LMLB: Document loaded, adding listeners.');
+        AddListeners();
+    });
+} else {
+    console.log('LMLB: Document already loaded, adding listeners.');
     AddListeners();
-});
+}
