@@ -8,27 +8,25 @@
 
 console.log('LMLB: Let Me Leave, Bro extension loaded.')
 
-function StopIt(event) {
+const StopIt = (event) => {
     console.log('LMLB: Intercepting unload events.')
     event.stopPropagation();
+    event.returnValue = true;
+};
+
+const AddListeners = () => {
+    window.addEventListener("beforeunload", StopIt, { capture: true });
+    document.addEventListener("beforeunload", StopIt, { capture: true });
+    window.addEventListener("unload", StopIt, { capture: true });
+    document.addEventListener("unload", StopIt, { capture: true });
+    console.log('LMLB: Added listeners.');
+};
+
+docloaded = false;
+while (!docloaded) {
+    if (document.readyState === 'complete') {
+        console.log('LMLB: Document loaded, adding listeners.');
+        document.addEventListener('DOMContentLoaded', AddListeners);
+        docloaded = true;
+    }
 }
-
-window.addEventListener("beforeunload", StopIt, { capture: true });
-window.addEventListener("onbeforeunload", StopIt, { capture: true });
-window.addEventListener("unload", StopIt, { capture: true });
-window.addEventListener("onunload", StopIt, { capture: true });
-document.addEventListener("beforeunload", StopIt, { capture: true });
-document.addEventListener("onbeforeunload", StopIt, { capture: true });
-document.addEventListener("onunload", StopIt, { capture: true });
-document.addEventListener("unload", StopIt, { capture: true });
-
-
-
-// window.addEventListener("beforeunload", event => event.stopPropagation(), { capture: true });
-// window.addEventListener("onbeforeunload", event => event.stopPropagation(), { capture: true });
-// window.addEventListener("unload", event => event.stopPropagation(), { capture: true });
-// window.addEventListener("onunload", event => event.stopPropagation(), { capture: true });
-// document.addEventListener("beforeunload", event => event.stopPropagation(), { capture: true });
-// document.addEventListener("onbeforeunload", event => event.stopPropagation(), { capture: true });
-// document.addEventListener("onunload", event => event.stopPropagation(), { capture: true });
-// document.addEventListener("unload", event => event.stopPropagation(), { capture: true });
