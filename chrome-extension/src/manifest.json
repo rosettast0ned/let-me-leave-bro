@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
     "name": "Let Me Leave, Bro",
-    "description": "Do you hate \"Are you SURE you want to leave this page?\" dialogs that pop up when you try to close a tab? So do I. This is a Chrome extension and Tampermonkey script that prevents execution of those Javascript dialogs that prevent you from leaving a page.",
-    "version": "2024.12.30",
+    "description": "Do you hate \"Are you SURE you want to leave this page?\" Javascript popups? So do I. This is an extension that prevents those.",
+    "version": "2024.12.30.0851",
     "author": {
         "email": "software@rosettast0ned.com"
     },

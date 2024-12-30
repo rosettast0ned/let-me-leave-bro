@@ -2,7 +2,7 @@
 // @author       Christopher Conley
 // @copyright    Copyright (C) 2024 Christopher Conley
 // @license      MIT
-// @version      2024.12.30
+// @version      2024.12.30.0851
 // @description  Do you hate "Are you SURE you want to leave this page?" dialogs that pop up when you try to close a tab? So do I. This is a Chrome extension and Tampermonkey script that prevents execution of those Javascript dialogs that prevent you from leaving a page.
 //
 
