@@ -11,7 +11,7 @@ console.log('LMLB: Let Me Leave, Bro extension loaded.')
 const StopIt = (event) => {
     console.log('LMLB: Intercepting unload events.')
     event.stopPropagation();
-    event.returnValue = true;
+    event.returnValue = '';
 };
 
 const AddListeners = () => {
@@ -22,11 +22,7 @@ const AddListeners = () => {
     console.log('LMLB: Added listeners.');
 };
 
-docloaded = false;
-while (!docloaded) {
-    if (document.readyState === 'complete') {
-        console.log('LMLB: Document loaded, adding listeners.');
-        document.addEventListener('DOMContentLoaded', AddListeners);
-        docloaded = true;
-    }
-}
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('LMLB: Document loaded, adding listeners.');
+    AddListeners();
+});
